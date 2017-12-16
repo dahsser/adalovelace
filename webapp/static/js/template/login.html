@@ -1,0 +1,26 @@
+<div class="row">
+    <div class="input-field col s6">
+        <input id="codigo" ng-model="codigo" type="text">
+        <label for="codigo">Usuario</label>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s6">
+        <input id="clave" ng-model="clave" type="password">
+        <label for="clave">Contraseña</label>
+    </div>
+</div>
+<div class="row">
+    <div class="input-field col s6 center-align hide">
+        <a id="botonIngresar" class="waves-effect waves-light btn-large"
+           ng-click="validarUsuario()">Ingresar</a>
+    </div>
+    <div class="input-field col s6 center-align">
+        <a class="waves-effect waves-light btn-large"
+           onclick="$('#botonIngresar').click();">Por ciclo</a>
+    </div>
+
+</div>
+<div class="row">
+    {{mensaje}}
+</div>
