@@ -1,0 +1,24 @@
+{
+  "name": "adalovelace",
+  "version": "1.0.0",
+  "description": "Hackathon igualdad de género",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dahsser/adalovelace.git"
+  },
+  "author": "Diego Lopez <dilogi7@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dahsser/adalovelace/issues"
+  },
+  "homepage": "https://github.com/dahsser/adalovelace#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "http": "0.0.0",
+    "node": "^9.3.0"
+  }
+}
