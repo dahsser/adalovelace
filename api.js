@@ -1,10 +1,13 @@
-module.exports = function(app, db){
+const fs = require('fs');
+module.exports = function(app){
     app.get("/api/users", function(req,res){
-        res.statusCode = 200;
-        console.log(db);
-        db.collection('users', function(err,collection){
-            let cursor = collection.find();
-            cursor.toArray((err, items) => {res.json[items]});
+        fs.readFile("usuarios.json",'utf8', function(err,data){
+            if(err){
+                console.log("Error");
+                return ;
+            }
+            res.statusCode = 200;
+            res.json(JSON.parse(data));
         });
     });
 };

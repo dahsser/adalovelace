@@ -24,7 +24,12 @@ app.get("/registro", function(req, res){
     res.status(200);
     res.render("registroDenuncia");
 });
+app.get("/principal", function(req, res){
+    res.status(200);
+    res.render("principal");
+});
 let server = app.listen(port,() => {
+    api(app);
     let host = server.address().address;
     let port = server.address().port;
     console.log("Example app listening at: http://%s:%s", host, port)
