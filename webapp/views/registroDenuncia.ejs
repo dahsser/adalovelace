@@ -13,10 +13,7 @@
     <script type="text/javascript" src="/vendor/jquery-3.2.1/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/vendor/materialize-0.98.2/js/materialize.min.js"></script>
     <script type="text/javascript" src="/vendor/angular-1.6/angular.min.js"></script>
-    <script type="text/javascript" src="/static/js/app.js"></script>
-    <script type="text/javascript" src="/static/js/directive/directive.js"></script>
-    <script type="text/javascript" src="/static/js/controller/controller.js"></script>
-
+    <script type="text/javascript" src="/static/js/index.js"></script>
 
     <style>
         header, main, footer {
@@ -39,7 +36,7 @@
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="side-nav" id="mobile-demo">
                 <li><a href="#!" class="collection-item"><i class="material-icons left">pan_tool</i>Has tu queja</a></li>
-                <li><a href="#!" class="collection-item"><i class="material-icons left">group</i>Reconoces la violencia de genero</a></li>
+                <li><a href="#!" class="collection-item"><i class="material-icons left">group</i>Reconoce la violencia de genero</a></li>
                 <li><a href="#!" class="collection-item"><i class="material-icons left">hourglass_empty</i>Proceso de mi queja</a></li>
                 <li><a href="#!" class="collection-item"><i class="material-icons left">phone</i>Contactos</a></li>
                 <li><a href="#!" class="collection-item"><i class="material-icons left">person_outline</i>Preguntas</a></li>
@@ -50,7 +47,6 @@
     <!-- Page Layout here -->
     <div class="row">
         <div class="col l3 hide-on-med-and-down">
-
             <div class="collection ">
                 <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87);"><i class="large material-icons left">pan_tool</i><h5>Has tu queja</h5></a>
                 <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de genero</h5></a>
@@ -59,26 +55,392 @@
                 <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas</h5></a>
             </div>
         </div>
-        <div class="col s12 l9 container">
-            <div class="row">
-                <nav>
-                    <div class="nav-wrapper">
-                        <div class="col s12">
-                            <a href="#!" class="breadcrumb">Registro de la denuncia</a>
-                            <a href="#!" class="breadcrumb">Anonimx</a>
-                        </div>
-                    </div>
-                </nav>
-            </div>
-            <div class="row">
-                <blockquote>
-                    En esta seccion te damos a elegir entre las siguientes opciones, cada una de esta brevemente
-                    explicada al escoger alguna de ellas:
+        <div class="col s12 l9" id="registro">
+            <div class="row" v-if="denunciaSeleccion">
+                <blockquote style="text-align: justify;font-size: 25px ">
+                   Bienvenido a -nombre de la apgina- agradecemos de antemano el valor de haber llegado hasta
+                    aqui, el camino quiza no fue facil pero no olvides que no estas sola, estamos aqui para apoyarte en todo lo que podamos y necesites.
+                    En estas pagina valormaos la decision que tomas en este punto, de llevar la denuncia de manera
+                    anonima o brindar tus datos, donde despues nos diras si deseas que sea de manera publica o no, es asi que a continuancion tendras que elegir.
+                    (Recuerda que si quieres llevar la denuncia a intancias mayores es recomendable brindar informacon acerca de tu persona)
                 </blockquote>
             </div>
             <div class="row">
+                <!--ELeccion privada-->
+                <div class="col s4" v-if="elecPrivada">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Solo denunciar</a>
+                    <!-- Modal Structure -->
+                    <div id="modal1" class="modal">
+                        <div class="modal-content">
+                            <h4>Solo denunciar</h4>
+                            <p>Al elegir esta opcion tu queja quedaria en esta seccion sin poder retomarlo en el futuro pero ayudando en la visibilizacion de la violencia</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" v-on:click="mostrarDenunciaAnonima">Aceptar</a>
+                        </div>
+                    </div>
+                </div>
+                <!--Eleccion privada con retormo-->
+                <div class="col s4" v-if="elecPrivadaRetorno">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Publica</a>
 
+                    <!-- Modal Structure -->
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                            <h4>Denuncia con un futuro retomo del caso</h4>
+                            <p>Aqui te damos la opcion de poder crear tu queja de manera anonima con e objetivo de poder retomar la peticion en un futuro si es que asi lo deseas. </p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" v-on:click="mostrarDenunciaPublica">Acepta</a>
+                        </div>
+                    </div>
+                </div>
+                <!--ELeccion publica-->
+                <div class="col s4" v-if="elecInstitucionExterna">
+                    <!-- Modal Trigger -->
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Denuncia con instittuciones externas</a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal2" class="modal">
+                        <div class="modal-content">
+                            <h4>Denuncia con instittuciones externas</h4>
+                            <p>Si no deseas realizar ladenuncia con tus datos personales por temos a que algun miembro de la comunidad universitaria se entere,puedes hacerla de manera externa con el apoyo de alguna ONG.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" v-on:click="mostrarDenunciaEnteidad">Acepta</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            <!--denuncia anonima-->
+            <div class="row" v-if="denunciaAnonima">
+                <blockquote style="text-align: justify;font-size: 25px ">
+                    En esta seccion te pediremos llenar informacion:
+                </blockquote>
+                <div class="col s10 offset-s2">
+                    <h3>¿Que tipo de violencia has sufrido?</h3>
+                    <div class="row">
+                        <form action="#">
+                            <p>
+                                <input name="anonimo101" type="radio" id="pregunta101" />
+                                <label for="pregunta101">hostigamiento sexual</label>
+                            </p>
+                            <p>
+                                <input name="anonimo101" type="radio" id="pregunta102" />
+                                <label for="pregunta102">psicologico</label>
+                            </p>
+                            <p>
+                                <input name="anonimo101" type="radio" id="pregunta103"  />
+                                <label for="pregunta103">LGTBTIQ(+)fobico</label>
+                            </p>
+                            <p>
+                                <input name="anonimo101" type="radio" id="pregunta104"/>
+                                <label for="pregunta104">otrxs,proponga</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col s10 offset-s2">
+                    <h3>¿Quien/es fue(ron) lx(s) agresor(es)?</h3>
+                    <div class="row">
+                        <form action="#">
+                            <p>
+                                <input name="anonimo111" type="radio" id="pregunta111" />
+                                <label for="pregunta111">pareja</label>
+                            </p>
+                            <p>
+                                <input name="anonimo111" type="radio" id="pregunta112" />
+                                <label for="pregunta112">compañeroxs</label>
+                            </p>
+                            <p>
+                                <input name="anonimo111" type="radio" id="pregunta113"  />
+                                <label for="pregunta113">profesor/a</label>
+                            </p>
+                            <p>
+                                <input name="anonimo111" type="radio" id="pregunta114"/>
+                                <label for="pregunta114">otrxs,proponga</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col s10 offset-s2">
+                    <h3>Describa acerca de los sucesos de su denuncia</h3>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <textarea id="anonimo121" class="materialize-textarea"></textarea>
+                                    <label for="anonimo121">Describa su caso</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <div class="col s12 l8 m6 offset-l2 offset-m3">
+                        <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                    </div>
+                </div>
+            </div>
+            <!--denuncia Publica-->
+            <div class="row" v-if="denunciaPublica">
+                <blockquote style="text-align: justify;font-size: 25px ">
+                    En esta usted creara un usuario en el que podra usarlo en el momento que desea volver a retomar la denuncia.
+                </blockquote>
+                <div class="col s10 offset-s2">
+                    <div class="row">
+                        <div class="input-field col s12 l6 m5 offset-m1">
+                            <input  id="usuarioTemp" type="text" class="validate">
+                            <label for="usuarioTemp">Ingrese usuario que desee</label>
+                        </div>
+                        <div class="input-field col s12 l6 m5">
+                            <input id="correoTemp" type="email" class="validate">
+                            <label for="correoTemp">Ingrese correo(opcional)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 l6 m5 offset-m1">
+                            <input id="passwordTemp" type="password" class="validate">
+                            <label for="passwordTemp">Ingrese password</label>
+                        </div>
+                        <div class="input-field col s12 l6 m5">
+                            <input id="passwordTempCon" type="password" class="validate">
+                            <label for="passwordTempCon">Repita password</label>
+                        </div>
+                    </div>
+                    <div class="row center-align"><div class="col s12 l8 m6 offset-l2 offset-m3">
+                            <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                        </div>sig1DemPublica
+                    </div>
+                    <div class="row" v-if="pg2DenPublica">
+                        <div class="row">
+                            <h3>¿Que tipo de violencia has sufrido?</h3>
+                            <div class="row">
+                                <form action="#">
+                                    <p>
+                                        <input name="anonimo201" type="radio" id="pregunta201" />
+                                        <label for="pregunta201">hostigamiento sexual</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo201" type="radio" id="pregunta202" />
+                                        <label for="pregunta202">psicologico</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo201" type="radio" id="pregunta203"  />
+                                        <label for="pregunta203">LGTBTIQ(+)fobico</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo201" type="radio" id="pregunta204"/>
+                                        <label for="pregunta204">otrxs,proponga</label>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>¿Quien/es fue(ron) lx(s) agresor(es)?</h3>
+                            <div class="row">
+                                <form action="#">
+                                    <p>
+                                        <input name="anonimo211" type="radio" id="pregunta211" />
+                                        <label for="pregunta211">pareja</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo212" type="radio" id="pregunta212" />
+                                        <label for="pregunta212">compañeroxs</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo212" type="radio" id="pregunta213"  />
+                                        <label for="pregunta213">profesor/a</label>
+                                    </p>
+                                    <p>
+                                        <input name="anonimo212" type="radio" id="pregunta214"/>
+                                        <label for="pregunta214">otrxs,proponga</label>
+                                    </p>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <h3>Describa acerca de los sucesos de su denuncia</h3>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <i class="material-icons prefix">mode_edit</i>
+                                            <textarea id="anonimo221" class="materialize-textarea"></textarea>
+                                            <label for="anonimo221">Describa su caso</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="row center-align">
+                            <div class="col s12 l8 m6 offset-l2 offset-m3">
+                                <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--denuncia con entidad externa-->
+            <div class="row" v-if="denunciaEnteidad">
+                <div class="col s10 offset-s2">
+                    <blockquote style="text-align: justify;font-size: 25px ">
+                        En esta usted creara un usuario en el que podra usarlo en el momento que desea volver a retomar la denuncia.
+                    </blockquote>
+                    <div class="row">
+                        <div class="input-field col s12 l6 m5 offset-m1">
+                            <input  id="usuarioTemp" type="text" class="validate">
+                            <label for="usuarioTemp">Ingrese usuario que desee</label>
+                        </div>
+                        <div class="input-field col s12 l6 m5">
+                            <input id="correoTemp" type="email" class="validate">
+                            <label for="correoTemp">Ingrese correo(opcional)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 l6 m5 offset-m1">
+                            <input id="passwordTemp" type="password" class="validate">
+                            <label for="passwordTemp">Ingrese password</label>
+                        </div>
+                        <div class="input-field col s12 l6 m5">
+                            <input id="passwordTempCon" type="password" class="validate">
+                            <label for="passwordTempCon">Repita password</label>
+                        </div>
+                    </div>
+                    <div class="row center-align">
+                        <div class="col s12 l8 m6 offset-l2 offset-m3">
+                            <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col s10 offset-s2">
+                    <h3>¿Que tipo de violencia has sufrido?</h3>
+                    <div class="row">
+                        <form action="#">
+                            <p>
+                                <input name="anonimo331" type="radio" id="pregunta301" />
+                                <label for="pregunta301">hostigamiento sexual</label>
+                            </p>
+                            <p>
+                                <input name="anonimo331" type="radio" id="pregunta302" />
+                                <label for="pregunta302">psicologico</label>
+                            </p>
+                            <p>
+                                <input name="anonimo331" type="radio" id="pregunta303"  />
+                                <label for="pregunta303">LGTBTIQ(+)fobico</label>
+                            </p>
+                            <p>
+                                <input name="anonimo331" type="radio" id="pregunta304"/>
+                                <label for="pregunta304">otrxs,proponga</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col s10 offset-s2">
+                    <h3>¿Quien/es fue(ron) lx(s) agresor(es)?</h3>
+                    <div class="row">
+                        <form action="#">
+                            <p>
+                                <input name="anonimo222" type="radio" id="pregunta221" />
+                                <label for="pregunta221">pareja</label>
+                            </p>
+                            <p>
+                                <input name="anonimo222" type="radio" id="pregunta222" />
+                                <label for="pregunta222">compañeroxs</label>
+                            </p>
+                            <p>
+                                <input name="anonimo222" type="radio" id="pregunta223"  />
+                                <label for="pregunta223">profesor/a</label>
+                            </p>
+                            <p>
+                                <input name="anonimo222" type="radio" id="pregunta224"/>
+                                <label for="pregunta224">otrxs,proponga</label>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="col s10 offset-s2">
+                    <h3>Describa acerca de los sucesos de su denuncia</h3>
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="input-field col s6">
+                                    <i class="material-icons prefix">mode_edit</i>
+                                    <textarea id="anonimo223" class="materialize-textarea"></textarea>
+                                    <label for="anonimo223">Describa su caso</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row center-align">
+                    <div class="col s12 l8 m6 offset-l2 offset-m3">
+                        <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <blockquote style="text-align: justify">
+                        En esta seccion usted tendra que contactar con las ONGs disponibles.
+                    </blockquote>
+                    <div class="row">
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>ONG</th>
+                                <th>Descripcion</th>
+                                <th>Enlace</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                            <tr>
+                                <td>Flora Tristán</td>
+                                <td>Tiene como misión “combatir las causas estructurales que restringen la ciudadanía de las mujeres y/o afectan su ejercicio</td>
+                                <td><a rel="http://www.flora.org.pe/web2/">Enlace</a></td>
+                            </tr>
+                            <tr>
+                                <td>DEMUS:</td>
+                                <td>Somos una organización feminista peruana que defiende los derechos humanos, en particular los derechos sexuales y reproductivos de las mujeres, promoviendo su libre ejercicio y cuestionando el paradigma cultural hegemónico sobre las mujeres y su sexualidad.</td>
+                                <td><a href="https://www.demus.org.pe/">Enlace</a></td>
+                            </tr>
+                            <tr>
+                                <td>PROMSEX:</td>
+                                <td>PROMSEX es una organización no gubernamental feminista, conformada por hombres y mujeres, profesionales y activistas, que busca contribuir a la vigencia de la integridad y dignidad de las personas en el acceso a la salud sexual y reproductiva, la justicia y la seguridad humana, a través de la incidencia política, de la generación de conocimiento y de la articulación con otras organizaciones de la sociedad civil.</td>
+                                <td><a href="http://promsex.org/">Enlace</a></td>
+                            </tr>
+                            <tr>
+                                <td>CEDAPP:</td>
+                                <td>Aportamos al desarrollo equitativo de capacidades y recursos psicológicos de niñas, niños y adolescentes, contribuyendo así a generar y fortalecer procesos de desarrollo humano y ciudadano desde la infancia.</td>
+                                <td><a href="https://www.cedapp.org.pe/">Enlace</a></td>
+                            </tr>
+                            <tr>
+                                <td>Manuela Ramos:</td>
+                                <td>Contribuir al empoderamiento y autonomía de las mujeres desde una perspectiva feminista comprometida con la justicia social, los valores democráticos y el respeto a los Derechos Humanos.</td>
+                                <td><a href="https://www.facebook.com/manuela.peru/">Enlace</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <blockquote>
+                            Despues de contactarte, dejamos el numero de tu agreso/a y/o el tu yo y sube el archivo pedido(en pdf)
+                        </blockquote>
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">phone</i>
+                            <input id="telfonoContacto" type="tel" class="validate">
+                            <label for="telfonoContacto">Telefono</label>
+                        </div>
+                        <div class="row center-align">
+                            <div class="col s12 l8 m6 offset-l2 offset-m3">
+                                <button class="btn waves-effect waves-light" type="submit">Siguiente</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>
@@ -124,6 +486,13 @@
             $('.slider').slider();
         });
 
+        $(document).ready(function(){
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+        });
+
     </script>
+    <script type="text/javascript" src="/vendor/vue/vue.js"></script>
+    <script type="text/javascript" src="/static/js/denuncias.js"></script>
 </body>
 </html>

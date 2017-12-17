@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Adalovelace</title>
+        <!--Import Google Icon Font-->
+        <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Import materialize.css-->
+        <link type="text/css" rel="stylesheet" href="/vendor/materialize-0.98.2/css/materialize.min.css" media="screen,projection"/>
+        <!--Let browser know website is optimized for mobile-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <script type="text/javascript" src="/vendor/jquery-3.2.1/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="/vendor/materialize-0.98.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="/vendor/angular-1.6/angular.min.js"></script>
+    </head>
+    <body>
+        <div id="app">
+            {{message}}
+        </div>
+
+        <div id="app-2">
+            <span v-bind:title="message">
+                Hover your mouse over me for a few seconds to see my
+            </span>
+        </div>
+
+        <div id="app-3">
+            <span v-if="oracion1">oracion1</span>
+            <span v-if="oracion2">oracion2</span>
+            <button v-on:click="cambio">cambio</button>
+        </div>
+
+        <script type="text/javascript" src="/vendor/vue/vue.js"></script>
+        <script type="text/javascript" src="/static/js/seguimiento.js"></script>
+    </body>
+</html>
