@@ -24,9 +24,13 @@ app.get("/registro", function(req, res){
     res.status(200);
     res.render("registroDenuncia");
 });
-app.get("/principal", function(req, res){
+app.get("/", function(req, res){
     res.status(200);
     res.render("principal");
+});
+app.get("/login", function(req, res){
+    res.status(200);
+    res.render("login");
 });
 let server = app.listen(port,() => {
     api(app);
