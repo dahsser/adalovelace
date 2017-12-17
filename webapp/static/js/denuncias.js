@@ -15,8 +15,8 @@ var registro=new Vue({
     methods:{
         eliminarTodo:function () {
             this.elecInstitucionExterna=false;
-            this.elecPrivada=false;
             this.elecPrivadaRetorno=false;
+            this.elecPrivada=false;
             this.denunciaAnonima=false;
             this.denunciaPublica=false;
             this.denunciaEnteidad=false;
