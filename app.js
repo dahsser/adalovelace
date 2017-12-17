@@ -20,9 +20,21 @@ app.get("/inicio", function(req, res){
     res.status(200);
     res.render("index");
 });
-app.get("/registro", function(req, res){
+app.get("/user/Denuncia", function(req, res){
     res.status(200);
     res.render("registroDenuncia");
+});
+app.get("/user/Seguimiento", function(req, res){
+    res.status(200);
+    res.render("seguimiento");
+});
+app.get("/test", function(req, res){
+    res.status(200);
+    res.render("test");
+});
+app.get("/registro", function(req, res){
+    res.status(200);
+    res.render("registro");
 });
 app.get("/", function(req, res){
     res.status(200);

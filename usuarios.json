@@ -1,15 +1,91 @@
 {
     "user1":{
         "firstName":"Fiorella",
-        "lastName":"Carpio",
-        "age":21,
+        "lastName":"Carpio Delgado",
+    	"birthday":"1996-12-13",
+    	"email": "fcarpiod@uni.pe",
+    	"phone": "963802354",
         "user":"usuario98",
         "password":"123456789"
     },
     "user2":{
         "firstName":null,
         "lastName": null,
-        "age":null,
+        "birthday":null,
+    	"email": null,
+    	"phone": "963802354",
+        "user":"usuario97",
+        "password":"123456789"
+    },
+    "user3":{
+        "firstName":null,
+        "lastName": null,
+        "birthday":null,
+    	"email": null,
+    	"phone": "963802354",
+        "user":"usuario96",
+        "password":"123456789"
+    },
+     "user4":{
+        "firstName":"Katherine",
+        "lastName": "Castillo Salaverry",
+        "birthday":"1993-09-13",
+    	"email": "kcastillos@uni.pe",
+    	"phone": "960809354",
+        "user":"usuario95",
+        "password":"123456789"
+    },
+ "user5":{
+        "firstName":"Eduardo Alberto",
+        "lastName": "García Samaniego",
+        "birthday":"1990-05-10",
+	"email": "egarcias@uni.pe",
+	"phone": "963842333",
+        "user":"usuario94",
+        "password":"123456789"
+    },
+ "user6":{
+        "firstName":null,
+        "lastName": null,
+        "birthday":null,
+	"email": null,
+	"phone": "963802354",
+        "user":"usuario93",
+        "password":"123456789"
+    },
+ "user7":{
+        "firstName":"Almendra Melissa",
+        "lastName": "Perez García",
+        "birthday":"1991-04-24",
+	"email": "aperezg@uni.pe",
+	"phone": "900802354",
+        "user":"usuario92",
+        "password":"123456789"
+    },
+ "user8":{
+        "firstName":"Liliana",
+        "lastName": "Meneses Alaya",
+        "birthday":"1996-12-13",
+	"email": "lmenesesa@uni.pe",
+	"phone": "963802388",
+        "user":"usuario91",
+        "password":"123456789"
+    },
+ "user9":{
+        "firstName":"Carla Lucía",
+        "lastName": "Toledo Karín",
+        "birthday":"1996-12-13",
+	"email": "ctoledok@uni.pe",
+	"phone": "963777354",
+        "user":"usuario90",
+        "password":"123456789"
+    },
+ "user10":{
+        "firstName":null,
+        "lastName": null,
+        "birthday":null,
+	"email": null,
+	"phone": null,
         "user":"usuario98",
         "password":"123456789"
     }

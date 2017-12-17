@@ -7,7 +7,16 @@ module.exports = function(app){
                 return ;
             }
             res.statusCode = 200;
-            res.json(JSON.parse(data));
+            let usuarios = JSON.parse(data);
+            let respuesta = {};
+            for(let user in usuarios){
+                respuesta[user]={
+                    "firstName":usuarios[user]["firstName"],
+                    "lastName":usuarios[user]["lastName"],
+                    "user":usuarios[user]["user"]
+                }
+            }
+            res.json(respuesta);
         });
     });
 };
