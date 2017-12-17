@@ -1,0 +1,8 @@
+applications:
+- name: adalovelace
+  command: node app.js
+  path: .
+  memory: 256M
+  disk_quota: 2048M
+  env:
+    NODE_ENV: production

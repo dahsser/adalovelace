@@ -1,0 +1,16 @@
+{
+    "user1":{
+        "firstName":"Fiorella",
+        "lastName":"Carpio",
+        "age":21,
+        "user":"usuario98",
+        "password":"123456789"
+    },
+    "user2":{
+        "firstName":null,
+        "lastName": null,
+        "age":null,
+        "user":"usuario98",
+        "password":"123456789"
+    }
+}
