@@ -40,9 +40,9 @@ app.get("/", function(req, res){
     res.status(200);
     res.render("principal");
 });
-app.get("/login", function(req, res){
+app.get("/contacto", function(req, res){
     res.status(200);
-    res.render("login");
+    res.render("contacto");
 });
 app.get("/estadisticas", function(req, res){
     res.status(200);
