@@ -19,4 +19,15 @@ module.exports = function(app){
             res.json(respuesta);
         });
     });
+    app.get("/api/denuncias", function(req,res){
+        fs.readFile("denuncias.json","utf8", function(err,data){
+            if(err){
+                console.log(err);
+                return ;
+            }
+            res.statusCode = 200;
+            let denuncias = JSON.parse(data);
+            res.json(denuncias);
+        })
+    });
 };

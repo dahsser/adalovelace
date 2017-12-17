@@ -44,6 +44,14 @@ app.get("/login", function(req, res){
     res.status(200);
     res.render("login");
 });
+app.get("/estadisticas", function(req, res){
+    res.status(200);
+    res.render("estadistica");
+});
+app.get("/casosDeExito", function(req, res){
+    res.status(200);
+    res.render("casosDeExito");
+});
 let server = app.listen(port,() => {
     api(app);
     let host = server.address().address;

@@ -1,0 +1,29 @@
+{
+    "user1":{
+        "firstName":"Sandy",
+        "lastName":"Solis Delgado",
+    	"birthday":"1996-12-13",
+    	"email": "fcarpiod@uni.pe",
+    	"phone": "963802354",
+        "user":"revisora97",
+        "password":"123456789"
+    },
+    "user2":{
+        "firstName":"Tania",
+        "lastName": "Luján Alaya",
+        "birthday":"1996-02-03",
+    	"email": "tanialujanalaya@gmail.com",
+    	"phone": "963802354",
+        "user":"revisora96",
+        "password":"123456789"
+    },
+    "user3":{
+        "firstName":"Carmen",
+        "lastName": "Barrientos",
+        "birthday":"1996-12-12",
+    	"email": "carmenbarrientos@gmail.com",
+    	"phone": "963802354",
+        "user":"revisora95",
+        "password":"123456789"
+    }
+}
