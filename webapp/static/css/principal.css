@@ -1,70 +1,42 @@
-@import url("http://fonts.googleapis.com/icon?family=Releway");
-@import url("http://fonts.googleapis.com/icon?family=Oswald");
-
-html, body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
+*{
+    margin:0;
+    padding:0;
 }
-
-.intro{
+html, body {
     height: 100%;
-    width: 100%;
-    margin: auto;
-    background: url(/resource/images/acososexual.jpg) no-repeat 50% 50%;
-    display: table;
-    top: 0;
+}
+body{
+   background: url("/resource/images/banner.jpg") no-repeat center;
     background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
-
-.intro .inner{
-    display: table-cell;
-    vertical-align: middle;
-    width: 100%;
-    max-width: none;
-}
-
-.content{
-    max-width: 500px;
+.container{
+    max-width: 600px;
     margin: 0 auto;
     text-align: center;
 }
+h1{
+    color:#FFFFFF;
+    font: 900 96px 'Bree Serif', serif;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.6);
+    margin-bottom: 24px;
 
-.content h1{
-    font-family:'Releway',sans-serif;
-    color: #F9F3F4;
-    text-shadow: 0px 0px 300px #000;
-    font-size:500%;
 }
-
 .btn{
-    border-radius: 9px;
-    font-family: 'Oswald',sans-serif;
-    color:#036AB1;
-    font-size: 135%;
-    padding: 10px 20px;
-    border:solid #036AB1 3px;
-    text-transform: uppercase;
+    background: linear-gradient(to right, rgba(252,83,53,1) 0%, rgba(252,83,53,1) 1%, rgba(250,80,225,0.83) 34%, rgba(255,87,202,0.71) 58%, rgba(230,62,124,0.62) 77%, rgba(231,56,39,0.5) 100%);
+    border-radius: 4px;
+    padding: 20px 48px;
+    color: #FFFFFF;
+    font: 20px 'Bree Serif', serif;
     text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.3);
 }
-
 .btn:hover{
-    color:#fff;
-    border:solid #fff 3px;
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+    -webkit-transition: box-shadow 1s ease;
+    transition: box-shadow 1s ease;
 }
-
-@media screen and (max-width: 768px){
-    .content h1{
-        font-size: 250%;
-    }
-    .btn{
-        font-size: 110%;
-        padding: 7px 15px;
-    }
-    p{
-        font-size: 100%;
-        line-height:160%;
-    }
-}
-
