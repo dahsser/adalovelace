@@ -5,6 +5,6 @@
 app.directive('login',function () {
     return {
         restrict : 'E',
-        templateUrl : 'app/js/template/login.html'
+        templateUrl : 'app/js/template/login.ejs.html'
     };
 });
