@@ -29,14 +29,15 @@
         <!-- Navbar goes here -->
         <nav class="pink darken-3">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">Logo</a>
+                <a href="/inicio" class="brand-logo center">Bienvenida(o)</a>
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="side-nav" id="mobile-demo">
-                    <li><a href="#!" class="collection-item"><i class="material-icons left">pan_tool</i>Has tu queja</a></li>
-                    <li><a href="#!" class="collection-item"><i class="material-icons left">group</i>Reconoces la violencia de genero</a></li>
-                    <li><a href="#!" class="collection-item"><i class="material-icons left">hourglass_empty</i>Proceso de mi queja</a></li>
-                    <li><a href="#!" class="collection-item"><i class="material-icons left">phone</i>Contactos</a></li>
-                    <li><a href="#!" class="collection-item"><i class="material-icons left">person_outline</i>Preguntas</a></li>
+                    <a href="/user/Denuncia" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">pan_tool</i><h5>Haz tu Queja</h5></a>
+                    <a href="/test" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de género</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">hourglass_empty</i><h5>Proceso de mi Queja</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">phone</i><h5>Contáctanos</h5></a>
+                    <a href="/estadisticas" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">poll</i><h5>Estadística</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas frecuentes</h5></a>
                 </ul>
             </div>
         </nav>
@@ -46,11 +47,12 @@
             <div class="col l3 hide-on-med-and-down">
 
                 <div class="collection ">
-                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87);"><i class="large material-icons left">pan_tool</i><h5>Has tu queja</h5></a>
-                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de genero</h5></a>
-                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">hourglass_empty</i><h5>Proceso de mi queja</h5></a>
-                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">phone</i><h5>Contactos</h5></a>
-                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas</h5></a>
+                    <a href="/user/Denuncia" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">pan_tool</i><h5>Haz tu Queja</h5></a>
+                    <a href="/test" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de género</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">hourglass_empty</i><h5>Proceso de mi Queja</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">phone</i><h5>Contáctanos</h5></a>
+                    <a href="/estadisticas" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">poll</i><h5>Estadística</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas frecuentes</h5></a>
                 </div>
             </div>
             <div class="col s12 l9">
@@ -62,352 +64,49 @@
                         </div>
                         <ul class="collapsible" data-collapsible="accordion">
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">filter_drama</i>Tu pareja</div>
+                                <div class="collapsible-header"><i class="material-icons">people_outline</i>Tu pareja</div>
                                 <div class="collapsible-body">
-                                    <span>Lorem ipsum dolor sit amet.</span>
-                                    <a class="btn-floating btn-large waves-effect waves-light red" v-on:click="mostrarPareja"><i class="material-icons">mode_edit</i></a>
+                                    <ol class="collection with-header">
+                                        <h4 class="collection-header center-align">Reconoce la violencia con tu pareja</h4>
+                                        <li class="collection-item">Critica tu fomra de vestir, de arreglarte y trata de convencerte para que cambies tu aspecto</li>
+                                        <li class="collection-item">Te impide ir donce quieras,cuadno quieras y con quien quieras.</li>
+                                        <li class="collection-item">Intenta que te alejes de tu familia o de tus amistades o los critica y descalifica.</li>
+                                        <li class="collection-item">Te hace sentir inferior,tanto o inutil o se burla de tus creencias</li>
+                                        <li class="collection-item">Te insulta o se dirige a ti con nombres ofensivos.</li>
+                                        <li class="collection-item">Te ignora muestra indiferencia o te castiga con el silencio.</li>
+                                        <li class="collection-item">Se muestra muy sobreprotector contigo</li>
+                                        <li class="collection-item">Entre otras sistuaciones</li>
+                                    </ol>
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">place</i>Un compañero Univesitario</div>
+                                <div class="collapsible-header"><i class="material-icons">person_outline</i>Un compañero univesitario</div>
                                 <div class="collapsible-body">
-                                    <span>Lorem ipsum dolor sit amet.</span>
-                                    <a class="btn-floating btn-large waves-effect waves-light red" v-on:click="mostrarUni"><i class="material-icons">mode_edit</i></a>
+                                        <ol class="collection with-header">
+                                            <h4 class="collection-header center-align">Reconoce la violencia en la universidad por parte de un compañero</h4>
+                                            <li class="collection-item">Te silvaron dentro del campus universitario.</li>
+                                            <li class="collection-item">En plan de broma te silvan al entrar al salón o al salir a participar a la pizarra.</li>
+                                            <li class="collection-item">Te escribe un estudiante desconocido atribuyéndose mayor confianza contigo, haciéndote sentir incómoda en el campus universitario.</li>
+                                            <li class="collection-item">Habla de otras compañeras tuyas, de su cuerpo y haciendo comentarios obscenos al respecto.</li>
+                                            <li class="collection-item">Te insulta o se dirige a ti con nombres ofensivos.</li>
+                                            <li class="collection-item">Escuchaste que te tomaron fotos sin tu consentimiento.</li>
+                                            <li class="collection-item">Entre otras sistuaciones</li>
+                                        </ol>
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Un compañero del trabajo</div>
+                                <div class="collapsible-header"><i class="material-icons">work</i>Un trabajador de la universidad</div>
                                 <div class="collapsible-body">
                                     <span>Lorem ipsum dolor sit amet.</span>
-                                    <a class="btn-floating btn-large waves-effect waves-light red" v-on:click="mostrarTrabajo"><i class="material-icons">mode_edit</i></a>
                                 </div>
                             </li>
                             <li>
-                                <div class="collapsible-header"><i class="material-icons">whatshot</i>Un docente</div>
+                                <div class="collapsible-header"><i class="material-icons">class</i>Un docente</div>
                                 <div class="collapsible-body">
                                     <span>Lorem ipsum dolor sit amet.</span>
-                                    <a class="btn-floating btn-large waves-effect waves-light red" v-on:click="mostratarDocente"><i class="material-icons">mode_edit</i></a>
                                 </div>
                             </li>
                         </ul>
-                    </div>
-
-                    <!--tu pareja-->
-                    <div class="row" v-if="testPareja">
-                        <div class="row container">
-                            <h5>¿Critica tu forma de vestir, de arreglarte y trata de convencerte para que cambies tu aspecto?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si11"  />
-                                    <label for="si11">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no11"  />
-                                    <label for="no11">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te impide ir donde quieras, cuando quieras y con quien quieras?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta12" type="radio" id="si12"  />
-                                    <label for="si12">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta12" type="radio" id="no12"  />
-                                    <label for="no12">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Intenta que te alejes de tu familia o de tus amistades o las critica y descalifica?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta13" type="radio" id="si13"  />
-                                    <label for="si13">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta13" type="radio" id="no13"  />
-                                    <label for="no13">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te hace sentir inferior, tonta o inútil o se burla de tus creencias?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta14" type="radio" id="si14"  />
-                                    <label for="si14">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta14" type="radio" id="no14"  />
-                                    <label for="no14">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te insulta o se dirige a ti con nombres ofensivos?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta15" type="radio" id="si15"  />
-                                    <label for="si15">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta15" type="radio" id="no15"  />
-                                    <label for="no15">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te ignora, muestra indiferencia o te castiga con el silencio?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta16" type="radio" id="si16"  />
-                                    <label for="si16">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta16" type="radio" id="no16"  />
-                                    <label for="no16">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Se pone celoso y te acusa de mantener relaciones con otras personas?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta17" type="radio" id="si17"  />
-                                    <label for="si17">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta17" type="radio" id="no17"  />
-                                    <label for="no17">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Se muestra muy sobreprotector contigo?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta18" type="radio" id="si18"  />
-                                    <label for="si18">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta18" type="radio" id="no18"  />
-                                    <label for="no18">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn">Enviar</a>
-                            </div>
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn" v-on:click="retornar">Retornar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Universidad-->
-                    <div class="row" v-if="testUniversidad">
-                        <div class="row container">
-                            <h5>¿Te silvaron dentro del campus universitario?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si21"  />
-                                    <label for="si21">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no21"  />
-                                    <label for="no21">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿En plan de broma te silvan al entrar al salón o al salir a participar frente a la pizarra?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si22"  />
-                                    <label for="si22">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no22"  />
-                                    <label for="no22">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te escribe un estudiante desconocido atribuyéndose mayor confianza contigo, haciéndote sentir incómoda en el campus universitario?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si23"  />
-                                    <label for="si23">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no23"  />
-                                    <label for="no23">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Hablan de otras compañeras tuyas, de su cuerpo y haciendo comentarios obscenos al respecto?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si23"  />
-                                    <label for="si23">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no23"  />
-                                    <label for="no23">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Escuchaste que te tomaron fotos sin tu consentimiento? </h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si24"  />
-                                    <label for="si24">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no24"  />
-                                    <label for="no24">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn">Enviar</a>
-                            </div>
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn" v-on:click="retornar">Retornar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--trabajo-->
-                    <div class="row" v-if="testTrabajo">
-                        <div class="row container">
-                            <h5>¿Te pone sobrenombres que te hacen sentir incómoda, que sientes que no son correctos?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si31"  />
-                                    <label for="si31">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no31"  />
-                                    <label for="no31">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Su trato contigo es diferente al trato que tiene con los demás estudiantes y esto te hace sentir incómoda?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si32"  />
-                                    <label for="si32">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no32"  />
-                                    <label for="no32">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te hace comentarios inapropiados que te generan malestar?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si33"  />
-                                    <label for="si33">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no33"  />
-                                    <label for="no33">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn">Enviar</a>
-                            </div>
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn" v-on:click="retornar">Retornar</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Docente-->
-                    <div class="row" v-if="testDocente">
-                        <div class="row container">
-                            <h5>¿Te trata de manera diferente al que tiene con los demás estudiantes y esto te hace sentir incómoda en el aula?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si41"  />
-                                    <label for="si41">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no41"  />
-                                    <label for="no41">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>Al momento de hacerle alguna consulta, ¿consideras que se acerca demasiado, sobrepasando tu espacio persona?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si42"  />
-                                    <label for="si42">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no42"  />
-                                    <label for="no42">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te ha citado a solas en su oficina con un fin extra-académico?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si43"  />
-                                    <label for="si43">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no43"  />
-                                    <label for="no43">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te hizo invitaciones para comer a solas y fuera de la universidad?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si44"  />
-                                    <label for="si44">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no44"  />
-                                    <label for="no44">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <h5>¿Te hace comentarios inapropiados por las redes sociales?</h5>
-                            <form action="#">
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="si45"  />
-                                    <label for="si45">Si</label>
-                                </p>
-                                <p>
-                                    <input class="with-gap" name="pregunta11" type="radio" id="no45"  />
-                                    <label for="no45">No</label>
-                                </p>
-                            </form>
-                        </div>
-                        <div class="row container">
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn">Enviar</a>
-                            </div>
-                            <div class="col s12 m4 l6">
-                                <a class="waves-effect waves-light btn" v-on:click="retornar">Retornar</a>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>

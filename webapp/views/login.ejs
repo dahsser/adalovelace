@@ -6,30 +6,102 @@
         <!--Import Google Icon Font-->
         <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <!--Import materialize.css-->
-        <link type="text/css" rel="stylesheet" href="/vendor/materialize-0.98.2/css/materialize.min.css" media="screen,projection"/>
+        <link type="text/css" rel="stylesheet" href="vendor/materialize-0.98.2/css/materialize.min.css" media="screen,projection"/>
         <!--Let browser know website is optimized for mobile-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <script type="text/javascript" src="/vendor/jquery-3.2.1/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="/vendor/materialize-0.98.2/js/materialize.min.js"></script>
         <script type="text/javascript" src="/vendor/angular-1.6/angular.min.js"></script>
-        <script type="text/javascript" src="/static/js/index.js"></script>
+        <style>
+            header, main, footer {
+                padding-left: 300px;
+            }
+
+            @media only screen and (max-width : 992px) {
+                header, main, footer {
+                    padding-left: 0;
+                }
+            }
+        </style>
     </head>
     <body>
         <!-- Navbar goes here -->
         <nav class="pink darken-3">
             <div class="nav-wrapper">
-                <a href="#!" class="brand-logo center">Bienvenida(o)</a>
+                <a href="/inicio" class="brand-logo center">Bienvenida(o)</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="side-nav" id="mobile-demo">
+                    <a href="/user/Denuncia" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">pan_tool</i><h5>Has tu queja</h5></a>
+                    <a href="/test" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de genero</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">hourglass_empty</i><h5>Proceso de mi queja</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">phone</i><h5>Contactos</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas</h5></a>
+                </ul>
             </div>
         </nav>
+
         <!-- Page Layout here -->
-        <div class="row container">
-            <div class="col s12 m8 l6 valign-wrapper">
-                <div class="card-panel">
-                    <div class="card-content">
-                        <h1>Bienvenido(a)</h1>
+        <div class="row">
+            <div class="col l3 hide-on-med-and-down">
+
+                <div class="collection ">
+                    <a href="/user/Denuncia" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">pan_tool</i><h5>Has tu queja</h5></a>
+                    <a href="/test" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">group</i><h5>Reconoces la violencia de genero</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">hourglass_empty</i><h5>Proceso de mi queja</h5></a>
+                    <a href="/login" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">phone</i><h5>Contactos</h5></a>
+                    <a href="#!" class="collection-item waves-effect waves-pink waves-ripple" style="color: rgb(173, 19, 87)"><i class="large material-icons left">person_outline</i><h5>Preguntas</h5></a>
+                </div>
+            </div>
+            <div class="col s12 l9">
+                <div class="row">
+                    <div class="col s10 offset-s2">
+                        <div class="row">
+                            <h1>COntactos:</h1>
+                            <h2 style="font-size: 25px"></h2>
+                        </div>
+                        <div class="row">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>ONG</th>
+                                    <th>Descripcion</th>
+                                    <th>Enlace</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+                                <tr>
+                                    <td>Flora Tristán</td>
+                                    <td>Tiene como misión “combatir las causas estructurales que restringen la ciudadanía de las mujeres y/o afectan su ejercicio</td>
+                                    <td><a rel="http://www.flora.org.pe/web2/">Enlace</a></td>
+                                </tr>
+                                <tr>
+                                    <td>DEMUS:</td>
+                                    <td>Somos una organización feminista peruana que defiende los derechos humanos, en particular los derechos sexuales y reproductivos de las mujeres, promoviendo su libre ejercicio y cuestionando el paradigma cultural hegemónico sobre las mujeres y su sexualidad.</td>
+                                    <td><a href="https://www.demus.org.pe/">Enlace</a></td>
+                                </tr>
+                                <tr>
+                                    <td>PROMSEX:</td>
+                                    <td>PROMSEX es una organización no gubernamental feminista, conformada por hombres y mujeres, profesionales y activistas, que busca contribuir a la vigencia de la integridad y dignidad de las personas en el acceso a la salud sexual y reproductiva, la justicia y la seguridad humana, a través de la incidencia política, de la generación de conocimiento y de la articulación con otras organizaciones de la sociedad civil.</td>
+                                    <td><a href="http://promsex.org/">Enlace</a></td>
+                                </tr>
+                                <tr>
+                                    <td>CEDAPP:</td>
+                                    <td>Aportamos al desarrollo equitativo de capacidades y recursos psicológicos de niñas, niños y adolescentes, contribuyendo así a generar y fortalecer procesos de desarrollo humano y ciudadano desde la infancia.</td>
+                                    <td><a href="https://www.cedapp.org.pe/">Enlace</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Manuela Ramos:</td>
+                                    <td>Contribuir al empoderamiento y autonomía de las mujeres desde una perspectiva feminista comprometida con la justicia social, los valores democráticos y el respeto a los Derechos Humanos.</td>
+                                    <td><a href="https://www.facebook.com/manuela.peru/">Enlace</a></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
 
         <!--footer-->
@@ -58,5 +130,24 @@
                 </div>
             </div>
         </footer>
+
+        <script>
+            // Initialize collapse button
+            $(".button-collapse").sideNav({
+                menuWidth: 300, // Default is 300
+                edge: 'left', // Choose the horizontal origin
+                closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                draggable: true, // Choose whether you can drag to open on touch screens,
+            });
+
+
+            $(document).ready(function(){
+                $('.slider').slider();
+            });
+
+        </script>
+        <script type="text/javascript" src="/vendor/vue/vue.js"></script>
+        <script type="text/javascript" src="/static/js/index.js"></script>
     </body>
 </html>
+
