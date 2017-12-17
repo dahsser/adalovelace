@@ -76,11 +76,11 @@
                 <!--ELeccion privada-->
                 <div class="col s4" v-if="elecPrivada">
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Solo denunciar</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Denuncia anónima</a>
                     <!-- Modal Structure -->
                     <div id="modal1" class="modal">
                         <div class="modal-content">
-                            <h4>Solo denunciar</h4>
+                            <h4>Denuncia anónima</h4>
                             <p>Al elegir esta opción tu queja quedará en esta sección sin poder retomarlo en el futuro pero
                                 ayudando en la visibilización de la violencia en espacios de la universidad</p>
                         </div>
@@ -92,12 +92,12 @@
                 <!--Eleccion privada con retormo-->
                 <div class="col s4" v-if="elecPrivadaRetorno">
                     <!-- Modal Trigger -->
-                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Publica</a>
+                    <a class="waves-effect waves-light btn modal-trigger" href="#modal2">Denuncia Formal</a>
 
                     <!-- Modal Structure -->
                     <div id="modal2" class="modal">
                         <div class="modal-content">
-                            <h4>Denuncia con un futuro retomo del caso</h4>
+                            <h4>Denuncia formal</h4>
                             <p>Aquí te damos la opción de poder contarnos tu queja de manera anónima con el objetivo de poder retomar y hacer un proceso debido en un futuro si es que así lo deseas. </p>
                         </div>
                         <div class="modal-footer">
@@ -122,7 +122,7 @@
                     </div>
                 </div>
             </div>
-            <!--denuncia anonima-->
+                <!--denuncia anonima-->
             <div class="row" v-if="denunciaAnonima">
                 <blockquote style="text-align: justify;font-size: 25px ">
                     En esta sección te pediremos llenar información:
