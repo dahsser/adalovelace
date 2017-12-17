@@ -37,7 +37,7 @@ app.get("/registro", function(req, res){
     res.render("registro");
 });
 app.get("/", function(req, res){
-    res.status(200);
+    res.status(200);    
     res.render("principal");
 });
 app.get("/contacto", function(req, res){
