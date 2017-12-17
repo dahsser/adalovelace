@@ -17,20 +17,12 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname + '/webapp/views');
 
 app.get("/inicio", function(req, res){
-    if(err){
-        console.log(err);
-    }else{
-        res.status(200);
-        res.render("index");
-    }
+    res.status(200);
+    res.render("index");
 });
 app.get("/registro", function(req, res){
-    if(err){
-        console.log(err);
-    }else{
-        res.status(200);
-        res.render("registroDenuncia");
-    }
+    res.status(200);
+    res.render("registroDenuncia");
 });
 let server = app.listen(port,() => {
     let host = server.address().address;
